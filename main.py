@@ -1,5 +1,6 @@
 from giao_blockchain.block import Block
 from giao_blockchain.blockchain import Blockchain
+from giao_blockchain.utils import current_timestamp, sha256, pretty_print_block
 
 chain = Blockchain()
 
@@ -13,3 +14,8 @@ chain.add_block(block2)
 # 显示整个链
 for block in chain.chain:
     print(block)
+    pretty_print_block(block)
+
+print("当前时间戳:", current_timestamp())
+print("哈希值:", sha256({"hello": "giao"}))
+
